@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let step of steps">
+    <h3>{{ step.title }}</h3>
+    <p>{{ step.descripcion }}</p>
+    <img [src]="step.img" alt="Imagen del paso" />
+    <div [style.backgroundColor]="step.bgcolor"></div>
+  </li>
+</ul>
