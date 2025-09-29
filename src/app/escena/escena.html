@@ -1,11 +1,38 @@
 <ul>
-  <li *ngFor="let step of steps">
-    <div [style.backgroundColor]="step.bgcolor" class="div-custom">
-      <img [src]="step.src" alt="Imagen del paso" />
+  <li *ngIf="steps && steps.length > 0">
+    <div [style.backgroundColor]="steps[currentStep].bgcolor" class="div-custom">
+      <img [src]="steps[currentStep].url" alt="Imagen del paso" width="250px" height="300px" />
     </div>
     <div class="div-info">
-      <h3>{{ step.title }}</h3>
-      <p>{{ step.descripcion }}</p>
+      <h3>{{ steps[currentStep].title }}</h3>
+      <p>{{ steps[currentStep].descripcion }}</p>
+      <div class="div-navegacion">
+        <div class="div-indicadores">
+          <span
+            *ngFor="let step of steps; let i = index"
+            class="indicador"
+            [class.activo]="i === currentStep"
+          ></span>
+        </div>
+        <div class="div-flechas">
+          <button
+            class="boton-flecha flecha-izquierda"
+            (click)="prevStep()"
+            [disabled]="currentStep === 0"
+            *ngIf="currentStep > 0"
+          >
+            &#8592;
+          </button>
+          <button
+            class="boton-flecha flecha-derecha"
+            (click)="nextStep()"
+            [disabled]="currentStep === totalSteps - 1"
+            *ngIf="currentStep < totalSteps - 1"
+          >
+            &#8594;
+          </button>
+        </div>
+      </div>
     </div>
   </li>
 </ul>

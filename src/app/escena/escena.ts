@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IStep } from '../istep';
 
@@ -9,6 +9,21 @@ import { IStep } from '../istep';
   templateUrl: './escena.html',
   styleUrls: ['./escena.css'],
 })
-export class Escena {
+export class Escena implements OnInit {
   @Input() steps: IStep[] = [];
+
+  currentStep: number = 0;
+  totalSteps: number = 0;
+
+  ngOnInit(): void {
+    this.totalSteps = this.steps.length;
+  }
+
+  nextStep(): void {
+    if (this.currentStep < this.totalSteps - 1) this.currentStep++;
+  }
+
+  prevStep(): void {
+    if (this.currentStep > 0) this.currentStep--;
+  }
 }

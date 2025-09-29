@@ -1,6 +1,6 @@
 export interface IStep {
   title: string;
   descripcion: string;
-  src: string;
+  url: string;
   bgcolor: string;
 }
