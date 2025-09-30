@@ -7,7 +7,7 @@ import { Home } from './home/home';
   standalone: true,
   imports: [Home],
   templateUrl: './app.html',
-  styleUrls: ['./app.css'],
+  styleUrls: ['./app.scss'],
 })
 export class App {
   protected readonly title = signal('5.-Onboarding-digital--Angular-');

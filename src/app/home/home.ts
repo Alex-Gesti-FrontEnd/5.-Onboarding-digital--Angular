@@ -8,7 +8,7 @@ import { StepsService } from '../steps.service';
   standalone: true,
   imports: [Escena],
   templateUrl: './home.html',
-  styleUrls: ['./home.css'],
+  styleUrls: ['./home.scss'],
 })
 export class Home implements OnInit {
   steps: IStep[] = [];

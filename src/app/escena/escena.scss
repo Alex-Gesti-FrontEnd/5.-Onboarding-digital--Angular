@@ -1,0 +1,58 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.div-custom {
+  border-start-start-radius: 40px;
+  border-start-end-radius: 40px;
+}
+
+.div-info {
+  border-end-end-radius: 40px;
+  border-end-start-radius: 40px;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.4);
+}
+
+.indicador {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+}
+
+.indicador.activo {
+  background-color: rgb(23, 23, 23);
+  width: 30px;
+}
+
+.boton-flecha {
+  width: 60px;
+  height: 60px;
+}
+
+.flecha-izquierda {
+  background-color: white;
+  color: rgb(23, 23, 23);
+  border: 2px solid rgb(23, 23, 23);
+}
+
+.flecha-izquierda:active {
+  background-color: rgb(23, 23, 23);
+  color: white;
+  border: 2px solid white;
+}
+
+.flecha-derecha {
+  background-color: rgb(23, 23, 23);
+  color: white;
+}
+
+.flecha-derecha:active {
+  background-color: white;
+  color: rgb(23, 23, 23);
+  border: 2px solid rgb(23, 23, 23);
+}
+
+.boton-flecha:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

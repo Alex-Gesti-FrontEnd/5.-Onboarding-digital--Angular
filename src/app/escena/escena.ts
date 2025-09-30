@@ -7,7 +7,7 @@ import { IStep } from '../istep';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './escena.html',
-  styleUrls: ['./escena.css'],
+  styleUrls: ['./escena.scss'],
 })
 export class Escena implements OnInit {
   @Input() steps: IStep[] = [];
