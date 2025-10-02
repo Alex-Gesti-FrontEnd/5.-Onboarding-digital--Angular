@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IStep } from '../istep';
+import { trigger, transition, style, animate, query, group } from '@angular/animations';
 
 @Component({
   selector: 'app-escena',
@@ -8,6 +9,17 @@ import { IStep } from '../istep';
   imports: [CommonModule],
   templateUrl: './escena.html',
   styleUrls: ['./escena.scss'],
+  animations: [
+    trigger('animSlider', [
+      transition('out => in', [
+        style({ transform: 'translateX(100%)', opacity: 0 }),
+        animate('400ms ease-out', style({ transform: 'translateX(0)', opacity: 1 })),
+      ]),
+      transition('in => out', [
+        animate('400ms ease-in', style({ transform: 'translateX(-100%)', opacity: 0 })),
+      ]),
+    ]),
+  ],
 })
 export class Escena implements OnInit {
   @Input() steps: IStep[] = [];
