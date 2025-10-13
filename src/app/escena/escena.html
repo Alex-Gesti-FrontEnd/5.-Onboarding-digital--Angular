@@ -1,10 +1,9 @@
-<ul class="list-unstyled d-flex align-items-center justify-content-center p-0 m-0 vh-100">
+<ul class="list-unstyled position-relative vh-100 m-0 p-0">
   <li
     *ngFor="let step of steps; let i = index"
-    class="d-flex flex-column col-5"
-    [@animSlider]="i === currentStep ? 'in' : 'out'"
+    class="d-flex align-items-center justify-content-center position-absolute top-50 start-50 translate-middle"
   >
-    <div *ngIf="i === currentStep" class="w-100 h-100">
+    <div *ngIf="i === currentStep" class="step-card" [@animSlider]="direction">
       <div
         [style.backgroundColor]="step.bgcolor"
         class="div-custom d-flex justify-content-center py-5 shadow-lg"

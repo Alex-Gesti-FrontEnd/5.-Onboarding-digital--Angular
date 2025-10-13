@@ -11,12 +11,13 @@ import { trigger, transition, style, animate, query, group } from '@angular/anim
   styleUrls: ['./escena.scss'],
   animations: [
     trigger('animSlider', [
-      transition('out => in', [
-        style({ transform: 'translateX(100%)', opacity: 0 }),
-        animate('400ms ease-out', style({ transform: 'translateX(0)', opacity: 1 })),
+      transition('* => next', [
+        style({ transform: 'translateX(50%)', opacity: 0 }),
+        animate('400ms ease-out', style({ transform: 'translateX(0%)', opacity: 1 })),
       ]),
-      transition('in => out', [
-        animate('400ms ease-in', style({ transform: 'translateX(-100%)', opacity: 0 })),
+      transition('* => prev', [
+        style({ transform: 'translateX(-50%)', opacity: 0 }),
+        animate('400ms ease-out', style({ transform: 'translateX(0%)', opacity: 1 })),
       ]),
     ]),
   ],
@@ -26,16 +27,23 @@ export class Escena implements OnInit {
 
   currentStep: number = 0;
   totalSteps: number = 0;
+  direction: 'next' | 'prev' = 'next';
 
   ngOnInit(): void {
     this.totalSteps = this.steps.length;
   }
 
   nextStep(): void {
-    if (this.currentStep < this.totalSteps - 1) this.currentStep++;
+    if (this.currentStep < this.totalSteps - 1) {
+      this.direction = 'next';
+      this.currentStep++;
+    }
   }
 
   prevStep(): void {
-    if (this.currentStep > 0) this.currentStep--;
+    if (this.currentStep > 0) {
+      this.direction = 'prev';
+      this.currentStep--;
+    }
   }
 }
