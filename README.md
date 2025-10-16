@@ -1,59 +1,115 @@
-# 5OnboardingDigitalAngular
+# 5.-Onboarding-digital--Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+## 📄 Descripción - Enunciado del ejercicio
 
-## Development server
+Este proyecto es una aplicación desarrollada en Angular que muestra un proceso de Onboarding digital interactivo.
+El objetivo es aprender los fundamentos de Angular creando una aplicación modular basada en componentes reutilizables, aplicando animaciones, comunicación entre componentes y testing.
 
-To start a local development server, run:
+La aplicación permite al usuario navegar entre diferentes pasos o consejos, mostrando una imagen, texto descriptivo y una transición animada entre pasos.
 
-```bash
-ng serve
-```
+La aplicación debía cumplir con:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Seguir la siguiente estructura **App -> Home -> Escena**.
+- Mostrar la información y imagenes en el navegador.
+- Permitir cambiar de _pestaña_ con una **animación** de transición.
+- Incluir **testing**.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## ✨ Funcionalidades
 
-```bash
-ng generate component component-name
-```
+- **Visualización de pasos del Onboarding 📚**
+  Cada paso incluye un título, descripción, imagen y color de fondo definidos mediante la interfaz IStep.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Navegación interactiva 🔄**
+  Dos botones permiten avanzar (nextStep) o retroceder (prevStep) entre los pasos.
 
-```bash
-ng generate --help
-```
+- **Indicadores de progreso ⚪**
+  Se muestran indicadores en forma de círculos que señalan el paso actual.
+  La frase activa aparece resaltada visualmente.
 
-## Building
+- **Animaciones fluidas 🎞️**
+  Transiciones entre pasos mediante la animación @animSlider creada con el módulo de Angular Animations.
 
-To build the project run:
+- **Arquitectura basada en componentes 🧩**:
 
-```bash
-ng build
-```
+  - `App` → Componente raíz.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+  - `Home` → Componente contenedor que gestiona los datos.
 
-## Running unit tests
+  - `Escena` → Componente hijo encargado de mostrar los pasos y controlar la interacción del usuario.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- **Testing con Jasmine + Karma 🧪**
+  Se han implementado pruebas unitarias para el componente `Escena`, comprobando la creación del componente, la navegación entre pasos y la correcta gestión del estado interno (`currentStep`, `direction`, etc.).
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+## 💻 Tecnologías Utilitzadas
 
-For end-to-end (e2e) testing, run:
+- [Angular](https://angular.dev)
+- **TypeScript**
+- **HTML5**
+- **CSS3** / **SCSS**
+- [Bootstrap](https://getbootstrap.com/)
+- **Angular Animations**
+- **Jasmine + Karma** (para testing)
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📋 Requisitos
 
-## Additional Resources
+Para ejectuar este proyecto, se necesita:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Un entorno con Node.js instalado, recomendado v18 o superior.
+- Un entorno de Angular CLI instalado globalmente (`npm install -g @angular/cli`).
+- Un editor de código (recomendado: Visual Studio Code).
+- Un navegador web moderno (**Chrome**, **Edge**, **OperaGX**, ...).
+
+---
+
+## 🛠️ Instalación
+
+1. Clona el repositorio o descarga los archivos ZIP:
+   `git clone https://github.com/Alex-Gesti-FrontEnd/5.-Onboarding-digital--Angular.git`
+
+2. Abre la carpeta en tu editor de código.
+3. Instala las dependencias ejecutando: `npm install`
+
+---
+
+## ▶️ Ejecución
+
+- **Ejecución visual del proyecto**:
+
+1. Accede a la terminal terminal con el comando: `ng serve`.
+2. Abre el navegador y accede al enlace que se mostrará por la terminal. De manera general es `http://localhost:4200`.
+3. Desde aquí se puede obsvervar como es la web y pulsando a los botones pasar de una plantilla a otra con nueva información y imagen.
+
+- **Testing**:
+
+1. Ejecuta los tests con el siguiente comando: `ng test` desde la ventana del terminal de tu editor de código.
+2. Se abrirá una pestaña en tu navegador **Chrome** la cual te informará que tests se han pasado, cuales no y los errores.
+
+---
+
+## 🖼️ Demo
+
+A continuación puedes ver algunas capturas de la aplicación en funcionamiento:
+
+- Pantalla principal de la aplicación.
+
+<p align="center">
+  <img src="./public/example/example_1.png" alt="Demo 1" width="450"/>
+</p>
+
+- Muestra del funcionamiento de los botones.
+
+<p align="center">
+  <img src="./public/example/example_2.gif" alt="Demo 2" width="450"/>
+</p>
+
+---
+
+## © Derechos de autor
+
+© 2025 [Alex Gesti](https://github.com/alexgesti) — Todos los derechos reservados.
